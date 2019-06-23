@@ -11,6 +11,7 @@ $ npm install -g unsubscribe-all
 
 ## Usage
 
+```js
 @UnsubscribeAll() // Call on ngDestory unsubscribe all subscribe observable
 @Component(){}
 export class TestComponent implements OnInit OnDestroy {
@@ -26,3 +27,4 @@ private subscribe: Subscription;
 
   ngOnDestory{}
 }
+```
