@@ -1,4 +1,5 @@
-
+#!/usr/bin/env node
+'use strict';
 const isFunction = fn => typeof fn === "function";
 
 const doUnsubscribe = subscription => {
