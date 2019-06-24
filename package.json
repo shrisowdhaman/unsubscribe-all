@@ -6,7 +6,7 @@
   "scripts": {
     "test": "test.js",
     "build": "rmdir dist && tsc",
-    "prepublishOnly": "rmdir dist && npm test && npm run build"
+    "prepublish": "npm test && npm run build"
   },
   "repository": {
     "type": "git",
@@ -26,5 +26,5 @@
   "devDependencies": {
     "typescript": "^2.8.3"
   },
-   "typings": "./dist/index.d.ts"
+  "typings": "./dist/index.d.ts"
 }
