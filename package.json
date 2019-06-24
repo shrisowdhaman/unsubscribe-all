@@ -5,8 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "test.js",
-    "build": "rm -rf ./dist && tsc",
-    "prepublish": "rm -rf ./dist && npm test && npm run build"
+    "build": "rmdir dist && tsc",
+    "prepublishOnly": "rmdir dist && npm test && npm run build"
   },
   "repository": {
     "type": "git",
