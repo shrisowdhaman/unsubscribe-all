@@ -1,10 +1,12 @@
 {
   "name": "unsubscribe-all",
-  "version": "1.1.0",
-  "description": "Angular Unsubscribe all Subscribed Observable \\",
-  "main": "index.js",
+  "version": "1.2.0",
+  "description": "Angular Unsubscribe all Subscribed Observable ",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "test.js"
+    "test": "test.js",
+    "build": "rm -rf ./dist && tsc",
+    "prepublish": "rm -rf ./dist && npm test && npm run build"
   },
   "repository": {
     "type": "git",
@@ -23,5 +25,6 @@
   "homepage": "https://github.com/shrisowdhaman/unsubscribe-all#readme",
   "devDependencies": {
     "typescript": "^2.8.3"
-  }
+  },
+   "typings": "./dist/index.d.ts"
 }
