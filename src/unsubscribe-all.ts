@@ -13,7 +13,7 @@ const doUnsubscribeIfArray = subscriptionsArray => {
     subscriptionsArray.forEach(doUnsubscribe);
 };
 
-export function Unsubscribeall({
+export function UnsubscribeAll({
   blackList = [],
   arrayName = "",
   event = "ngOnDestroy"
