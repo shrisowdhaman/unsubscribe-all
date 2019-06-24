@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/shrisowdhaman/unsubscribe-all/issues"
   },
-  "homepage": "https://github.com/shrisowdhaman/unsubscribe-all#readme"
+  "homepage": "https://github.com/shrisowdhaman/unsubscribe-all#readme",
+  "devDependencies": {
+    "typescript": "^2.8.3"
+  }
 }
