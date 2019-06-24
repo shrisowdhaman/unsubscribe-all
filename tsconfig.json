@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "module": "es2015",
+    "target": "es5",
+    "noImplicitAny": false,
+    "sourceMap": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "outDir": "dist/",
+    "declaration": true,
+    "lib": [
+      "dom",
+      "es2015",
+      "es2017"
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    "lib",
+    "__test__"
+  ]
+}
