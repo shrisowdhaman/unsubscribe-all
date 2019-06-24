@@ -1,4 +1,3 @@
- 
 const isFunction = fn => typeof fn === "function";
 
 const doUnsubscribe = subscription => {
@@ -17,21 +16,18 @@ export function UnsubscribeAll({
   arrayName = "",
   event = "ngOnDestroy"
 } = {}) {
-  return function(target: Function) {
-    const original = target.prototype[event];
+  return function(constructor: Function) {
+    const original = constructor.prototype[event];
 
     if (!isFunction(original)) {
-      // Throws the Error when NgDestory no declared in the component
       throw new Error(
         `${
-            target.name
-        } is using @UnsubscribeAll but does not implement OnDestroy`
+          constructor.name
+        } is using @AutoUnsubscribe but does not implement OnDestroy`
       );
-
-      console.warn(`${target.name} is using @UnsubscribeAll but has not declared ${event}`);
     }
 
-    target.prototype[event] = function() {
+    constructor.prototype[event] = function() {
       if (arrayName) {
         doUnsubscribeIfArray(this[arrayName]);
         isFunction(original) && original.apply(this, arguments);
@@ -48,6 +44,4 @@ export function UnsubscribeAll({
       isFunction(original) && original.apply(this, arguments);
     };
   };
-
-  
 }
