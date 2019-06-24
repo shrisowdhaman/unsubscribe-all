@@ -20,6 +20,7 @@ export function UnsubscribeAll({
     const original = constructor.prototype[event];
 
     if (!isFunction(original)) {
+       console.warn(`${target.name} is using @UnsubscribeAll but has not declared ${event}`);
       throw new Error(
         `${
           constructor.name
