@@ -16,19 +16,19 @@ export function UnsubscribeAll({
   arrayName = "",
   event = "ngOnDestroy"
 } = {}) {
-  return function(constructor: Function) {
-    const original = constructor.prototype[event];
+  return function(target: Function) {
+    const original = target.prototype[event];
 
     if (!isFunction(original)) {
        console.warn(`${target.name} is using @UnsubscribeAll but has not declared ${event}`);
       throw new Error(
         `${
-          constructor.name
+          target.name
         } is using @AutoUnsubscribe but does not implement OnDestroy`
       );
     }
 
-    constructor.prototype[event] = function() {
+    target.prototype[event] = function() {
       if (arrayName) {
         doUnsubscribeIfArray(this[arrayName]);
         isFunction(original) && original.apply(this, arguments);
