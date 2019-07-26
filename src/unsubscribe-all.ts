@@ -24,7 +24,7 @@ export function UnsubscribeAll({
       throw new Error(
         `${
           target.name
-        } is using @AutoUnsubscribe but does not implement OnDestroy`
+        } is using @UnsubscribeAll  but does not implement OnDestroy`
       );
     }
 
